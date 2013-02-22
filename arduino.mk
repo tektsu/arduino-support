@@ -295,7 +295,7 @@ upload: target
 		echo "*GUESSING* at serial device:" $(SERIALDEV); \
 		echo; }
 	stty $(STTYFARG) $(SERIALDEV) hupcl
-	if [ $(BOARD) == "flora" ] ; then $(ARDUINOSUPPORT)/reset.py $(SERIALDEV) ; sleep 1 ; fi
+	if [ $(BOARD) == "flora" ] ; then $(ARDUINOSUPPORT)/reset.py $(SERIALDEV) ; fi
 	$(AVRDUDE) $(AVRDUDEFLAGS) -U flash:w:$(TARGET).hex:i
 
 clean:

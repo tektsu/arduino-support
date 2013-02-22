@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import serial, sys
+import serial, sys, time
 serialPort = sys.argv[1]
 ser = serial.Serial(
     port=serialPort,
@@ -10,3 +10,6 @@ ser = serial.Serial(
 )
 ser.isOpen()
 ser.close() # always close port
+
+time.sleep(0.5)
+
