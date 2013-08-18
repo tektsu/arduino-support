@@ -171,7 +171,9 @@ SOURCES := $(INOFILE) \
 	$(wildcard $(addprefix utility/, *.c *.cc *.cpp))
 
 # automatically determine included libraries
-LIBRARIES := $(filter $(notdir $(wildcard $(ARDUINODIR)/libraries/*)), \
+#LIBRARIES := $(filter $(notdir $(wildcard $(ARDUINODIR)/libraries/*)), \
+#	$(shell sed -ne "s/^ *\# *include *[<\"]\(.*\)\.h[>\"]/\1/p" $(SOURCES)))
+LIBRARIES := $(filter $(notdir $(wildcard /Users/steve/Development/Arduino/libraries/*)), \
 	$(shell sed -ne "s/^ *\# *include *[<\"]\(.*\)\.h[>\"]/\1/p" $(SOURCES)))
 
 endif
